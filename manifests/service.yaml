@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-wf1
+  namespace: namespace-workflow-1686716955054
+spec:
+  type: LoadBalancer
+  selector:
+    app: azure-wf1
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
