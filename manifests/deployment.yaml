@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-wf1
+  labels:
+    app: azure-wf1
+  namespace: namespace-workflow-1686716955054
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-wf1
+  template:
+    metadata:
+      labels:
+        app: azure-wf1
+    spec:
+      containers:
+        - name: azure-wf1
+          image: acrworkflow1686716955054.azurecr.io/image-workflow-1686716955054:latest
+          ports:
+            - containerPort: 5000
