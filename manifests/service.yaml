@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: opc-wf
+  namespace: namespace-workflow-1686845582934
+spec:
+  type: LoadBalancer
+  selector:
+    app: opc-wf
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
