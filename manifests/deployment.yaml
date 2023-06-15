@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opc-wf
+  labels:
+    app: opc-wf
+  namespace: namespace-workflow-1686845582934
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opc-wf
+  template:
+    metadata:
+      labels:
+        app: opc-wf
+    spec:
+      containers:
+        - name: opc-wf
+          image: acrworkflow1686845582934.azurecr.io/image-workflow-1686845582934:latest
+          ports:
+            - containerPort: 5000
